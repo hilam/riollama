@@ -16,18 +16,29 @@ class HeaderApp(rio.Component):
         await themes.update_and_apply_theme(
             self.session,
             {
-                "light": self.light,
+                "mode": 'light' if self.light else 'dark',
             },
         )
         await self.force_refresh()
 
+    async def about(self) -> None:
+        print(self.session.base_url, self.session.active_page_url)
+        if self.session.active_page_url == self.session.base_url:
+            self.session.navigate_to('about')
+        else:
+            self.session.navigate_to('/')
+        await self.force_refresh()
+
     def build(self) -> rio.Component:
         return rio.Row(
-            rio.Image(
-                Path(self.session.assets / 'llamaCopacabana.png'),
-                corner_radius=1,
-                # width=2.5,
-                # height=2.5,
+            rio.Card(
+                rio.Image(
+                    Path(self.session.assets / 'llamaCopacabana.png'),
+                    corner_radius=1,
+                    # width=2.5,
+                    # height=2.5,
+                ),
+                on_press=self.about,
             ),
             # rio.Icon(
             #     'material/air:fill',

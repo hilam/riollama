@@ -19,7 +19,7 @@ def on_app_start(app: rio.App):
     app.default_attachments.append(ollama.AsyncClient(host=os.getenv('OLLAMA_SERVER')))
 
 
-ligth_theme = rio.Theme.from_colors(
+light_theme = rio.Theme.from_colors(
     primary_color=rio.Color.from_hex("b7be5fff"),
     secondary_color=rio.Color.from_hex("f2cc49ff"),
     background_color=rio.Color.from_hex("edf3c5ff"),
@@ -48,8 +48,13 @@ app = rio.App(
             page_url='',
             build=pages.ChatPage,
         ),
+        rio.Page(
+            name="Sobre",
+            page_url='about',
+            build=pages.AboutPage,
+        ),
     ],
     on_app_start=on_app_start,
-    theme=(ligth_theme, dark_theme,),
+    theme=(light_theme, dark_theme,),
     assets_dir=Path(__file__).parent / "assets",
 )
