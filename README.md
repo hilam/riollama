@@ -1,19 +1,24 @@
 # Riollama
 
-Chatbot com Llama3 via Ollama, criado usando [Rio](http://rio.dev/).
+Chatbot com LLMs locais via Ollama.
 
-Projeto baseado no templete `AI Chatbot`.
+Criado usando [Rio](http://rio.dev/), baseado no templete `AI Chatbot`.
 
 ## AI Chatbot
 
-Um chat simples com uma IA Llama3.
+Um chat simples com uma IAs locais via Ollama.
 
 **Não requer nenhuma senha ou chave de API.**
 
 ## Requisitos
 
--   Instalar Ollama
--   Baixar modelo
+-   Instalar Ollama (via Docker, recomendado)
+-   Baixar modelo (via Open WebUI, recomendado)
 -   Instalar dependências
 
 ## Tarefas
+
+- make run-app-dev
+  - roda o aplicativo em modo debug, para desenvolvimento
+- make run-app-prd
+  - roda o aplicativo em modo release, para produção
