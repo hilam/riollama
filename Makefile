@@ -1,6 +1,6 @@
 .PHONY: run-app-dev run-app-prd run-ollama run-ui
 
-RUN=poetry run
+RUN=poetry run  # ou 'venv/bin/python' se não usar 'poetry'
 COMPOSE=docker compose
 
 run-app-dev:
