@@ -86,7 +86,7 @@ make run-app-prd
 - roda o aplicativo RiOllama em modo debug, para desenvolvimento
 
 ```shell
-make run-app-prd
+make run-app-dev
 ```
 
 ### Instrução para baixar/criar modelos
