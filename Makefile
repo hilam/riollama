@@ -1,16 +1,22 @@
-.PHONY: run-app-dev run-app-prd run-ollama run-ui
+.PHONY: app-dev app-prd ollama ui stop clean
 
-RUN=poetry run  # ou 'venv/bin/python' se não usar 'poetry'
+RUN=poetry run  # ou 'pasta_ambiente_virtual/bin/python' se não usar 'poetry'
 COMPOSE=docker compose
 
-run-app-dev:
+app-dev:
 	${RUN} rio run
 
-run-app-prd:
+app-prd:
 	${RUN} rio run --release
 
-run-ollama:
+ollama:
 	${COMPOSE} up ollama -d
 
-run-ui:
+ui:
 	${COMPOSE} up open-webui -d
+
+stop:
+	${COMPOSE} down
+
+clean:
+	${COMPOSE} down --volumes --remove-orphans
