@@ -142,5 +142,7 @@ make run-ui
 * Após baixar pelo menos um modelo, é possível usar a interface do Open Web UI para conversar com o modelo
 * Explore as opções e saiba mais sobre a plataforma
 
+<img src="app/assets/openwebui_models.png" alt="Baixar modelo pré-definido"/>
+
 #### Criar modelo baseado no Hugging Face
 
